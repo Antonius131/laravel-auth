@@ -16,10 +16,20 @@
             <tbody>
                @forelse ($posts as $post)                  
                   <tr>
-                     <td>{{ $post->id }}</td>
-                     <td>{{ $post->author }}</td>
-                     <td>{{ $post->title }}</td>
-                     <td>{{ $post->date }}</td>
+                     <td>
+                        {{ $post->id }}
+                     </td>
+                     <td>
+                        {{ $post->author }}
+                     </td>
+                     <td>
+                        <a href="{{ route('admin.posts.show', $post->id) }}">
+                           {{ $post->title }}
+                        </a>
+                     </td>
+                     <td>
+                        {{ $post->date }}
+                     </td>
                   </tr>
                @empty
                   <h2 class="text-center">No posts to show</h2>
