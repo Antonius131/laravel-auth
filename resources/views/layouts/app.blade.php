@@ -35,7 +35,7 @@
                     <ul class="navbar-nav mr-auto disabled">
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link disabled">Posts</a>
+                                <a class="nav-link disabled" href="{{ route('login') }}">Posts</a>
                             </li>
                         @endguest
                         <li class="nav-item">
