@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\PostController;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\TextUI\XmlConfiguration\Group;
 use SebastianBergmann\CodeCoverage\Node\CrapIndex;
@@ -28,4 +29,5 @@ Route::middleware('auth')
     ->prefix('admin')
     ->group(function() {
         Route::get('/', 'HomeController@index')->name('home');
+        Route::resource('/posts', 'PostController');
     });
