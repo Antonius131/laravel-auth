@@ -32,8 +32,15 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
+                    <ul class="navbar-nav mr-auto disabled">
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Posts</a>
+                            </li>
+                        @endguest
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('admin.posts.index') ? 'active' : '' }}" href="{{ route('admin.posts.index') }}">Posts</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
