@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeController;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\TextUI\XmlConfiguration\Group;
+use SebastianBergmann\CodeCoverage\Node\CrapIndex;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +23,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::middleware('auth')
+    ->namespace('Admin')
+    ->name('admin.')
+    ->prefix('admin')
+    ->group(function() {
+        Route::get('/', 'Admin/HomeController@Index')->name('home');
+    });
