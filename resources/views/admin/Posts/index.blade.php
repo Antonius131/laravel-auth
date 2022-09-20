@@ -12,6 +12,7 @@
                 <th scope="col">Title</th>
                 <th scope="col">Date</th>
                 <th></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -29,10 +30,12 @@
                         </a>
                      </td>
                      <td>
-                        {{ $post->date }}
+                        <small>{{ $post->date }}</small>
                      </td>
                      <td>
                         <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-outline-primary">Edit</a>
+                     </td>
+                     <td>
                         <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
                            @csrf
                            @method('DELETE')
