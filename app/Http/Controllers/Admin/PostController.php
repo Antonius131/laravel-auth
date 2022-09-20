@@ -78,7 +78,13 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $oldPost = Post::findOrFail($id);
+        $data = $request->all();
+
+        $data['date'] = new DateTime();
+        $oldPost->update($data);
+
+        return redirect()->route('admin.posts.index', ['id' => $oldPost->id]);
     }
 
     /**
