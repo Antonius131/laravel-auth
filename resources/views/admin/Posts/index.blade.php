@@ -33,6 +33,12 @@
                      </td>
                      <td>
                         <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-outline-primary">Edit</a>
+                        <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
+                           @csrf
+                           @method('DELETE')
+         
+                           <button type="submit" class="btn btn-outline-danger">Delete</button>
+                        </form>
                      </td>
                   </tr>
                @empty
