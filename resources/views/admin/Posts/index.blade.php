@@ -11,6 +11,7 @@
                 <th scope="col">Author</th>
                 <th scope="col">Title</th>
                 <th scope="col">Date</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -29,6 +30,9 @@
                      </td>
                      <td>
                         {{ $post->date }}
+                     </td>
+                     <td>
+                        <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-outline-primary">Edit</a>
                      </td>
                   </tr>
                @empty
