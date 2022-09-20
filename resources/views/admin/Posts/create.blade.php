@@ -1,7 +1,11 @@
-<div class="container">
-   <div class="row">
-      <div class="col-8 offset-2">
-         <h2>I am your create.blade</h2>
+@extends('layouts.app')
+
+@section('content')
+   <div class="container">
+      <div class="row py-5">
+         <div class="col-8 offset-2">
+            <h2>I am your create.blade</h2>
+         </div>
       </div>
    </div>
-</div>
+@endsection
