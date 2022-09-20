@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use DateTime;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -37,7 +38,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $data['date'] = new DateTime();
+        Post::create($data);
+
+        return redirect()->route('admin.Posts.index');
     }
 
     /**
